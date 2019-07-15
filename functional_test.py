@@ -1,32 +1,50 @@
 # -*- coding:utf-8 -*-
 
 from selenium import webdriver
+import unittest
 
-browser = webdriver.Firefox()
 
-try:
-    # She checks out the homepage
-    browser.get(url='http://localhost:8000')
+class NewVisitorTest(unittest.TestCase):
+    def setUp(self):
+        self.browser = webdriver.Firefox()
+        self.browser.implicitly_wait(3)
 
-    # She notices he page title and header mention to-do lists
-    assert 'To-do' in browser.title, 'Browser title was ' + browser.title
+    def tearDown(self):
+        self.browser.quit()
 
-    # Is invitied to enter a to-do item straight away
+    def test_can_start_a_list_and_retrieve_it_later(self):
+            # She checks out the homepage
+            self.browser.get(url='http://localhost:8000')
 
-    # Types "Buy peacock feathers" into a text box
+            # She notices he page title and header mention to-do lists
 
-    # When hits enter, the page updates and now the page lists  "1: Buy peacock feathers"
+            # instead of the following code
+            # assert 'To-do' in browser.title, 'Browser title was ' + browser.title
 
-    # There is still a text box inviting her to add another item.
-    # Enters "Use peacock feathers to make a fly"
+            self.assertIn('To-Do', self.browser.title)
+            self.fail('Finish the test!')
 
-    # The page updates again and now shows both items on her list
+            # Is invitied to enter a to-do item straight away
 
-    # The site generates a unique URL for her (with explanatory text to the effect"
+            # Types "Buy peacock feathers" into a text box
 
-    # Visits the URL (with the to-do list)
+            # When hits enter, the page updates and now the page lists  "1: Buy peacock feathers"
 
-    # Is Satisfied
+            # There is still a text box inviting her to add another item.
+            # Enters "Use peacock feathers to make a fly"
 
-finally:
-    browser.close()
+            # The page updates again and now shows both items on her list
+
+            # The site generates a unique URL for her (with explanatory text to the effect"
+
+            # Visits the URL (with the to-do list)
+
+            # Is Satisfied
+
+        # finally:
+        #     browser.close()
+
+
+if __name__ == '__main__':
+    unittest.main(warnings='ignore')
+
