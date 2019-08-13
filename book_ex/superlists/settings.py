@@ -60,7 +60,7 @@ ROOT_URLCONF = 'superlists.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'lists/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -73,7 +73,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'book_ex.wsgi.application'
+WSGI_APPLICATION = 'superlists.wsgi.application'
 
 
 # Database
