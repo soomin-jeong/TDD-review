@@ -50,12 +50,30 @@ class HomePageTest(TestCase):
         new_item = Item.objects.first()
         self.assertEqual(new_item.text, 'A new list item')
 
-        self.assertIn('A new list item', response.content.decode())
-        expected_html = render_to_string(
-            'home.html',
-            {'new_item_text': 'A new list item'}
-        )
-        self.assertEqual(response.content.decode(), expected_html)
+    def test_home_page_redirects_after_POST(self):
+
+        # HttpRequest object is what Django gets when a user asks for a page
+        request = HttpRequest()
+        request.method = 'POST'
+        request.POST['item_text'] = 'A new list item'
+        response = HomePageView(request)
+
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(response['location'], '/')
+
+    def test_home_page_displays_all_the_items(self):
+        ITEM_1 = 'itemney 1'
+        ITEM_2 = 'itemney_2'
+
+        Item.objects.create(text=ITEM_1)
+        Item.objects.create(text=ITEM_2)
+
+        request = HttpRequest()
+        response = HomePageView(request)
+
+        self.assertIn(ITEM_1, response.content.decode())
+        self.assertIn(ITEM_2, response.content.decode())
+
 
 
 class ItemModelTest(TestCase):
@@ -73,5 +91,5 @@ class ItemModelTest(TestCase):
         first_saved_item = saved_items[0]
         second_saved_item = saved_items[1]
 
-        self.assertEqual(first_saved_item, 'The first(ever) list item')
-        self.assertEqual(second_saved_item,  'The second list item')
+        self.assertEqual(first_saved_item.text, 'The first(ever) list item')
+        self.assertEqual(second_saved_item.text,  'The second list item')
