@@ -6,11 +6,14 @@ from .models import Item
 
 # Create your views here.
 def HomePageView(request):
-    if request.method == 'POST':
-        new_item_text = request.POST['item_text']
-        Item.objects.create(text=new_item_text)
-        return redirect('/')
+    return render(request, 'home.html')
 
-    else:
-        items = Item.objects.all()
-    return render(request, 'home.html', {'items': items}, status=302)
+
+def view_list(request):
+    items = Item.objects.all()
+    return render(request, 'list.html', {'items': items})
+
+
+def new_list(request):
+    Item.objects.create(request.POST['item_text'])
+    # return redirect('/lists/the-only-list-in-the-world/')
