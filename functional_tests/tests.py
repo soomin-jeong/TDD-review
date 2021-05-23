@@ -1,11 +1,15 @@
 import time
 from selenium import webdriver
 import unittest
+from django.test import LiveServerTestCase
+from selenium.common.exceptions import WebDriverException
 
 from selenium.webdriver.common.keys import Keys
 
+MAX_WAIT = 10
 
-class NewVisitorTest(unittest.TestCase):
+
+class NewVisitorTest(LiveServerTestCase):
     def setUp(self):
         self.browser = webdriver.Chrome()
 
@@ -13,15 +17,20 @@ class NewVisitorTest(unittest.TestCase):
         self.browser.quit()
 
     def check_for_row_in_list_table(self, row_test: str) -> None:
-        table = self.browser.find_element_by_id('id_list_table')
-        rows = table.find_elements_by_tag_name('tr')
-        self.assertTrue(
-            any(row.text == row_test for row in rows),
-            f"{row_test} did not appear in table. Contents were:\n{table.text}"
-        )
+        start_time = time.time()
+        while True:
+            try:
+                table = self.browser.find_element_by_id('id_list_table')
+                rows = table.find_elements_by_tag_name('tr')
+                self.assertIn(row_test, [row.text for row in rows])
+                return
+            except (AssertionError, WebDriverException) as e:
+                if time.time() - start_time > MAX_WAIT:
+                    raise e
+                time.sleep(0.5)
 
     def test_can_start_a_list_and_retrieve_it_later(self):
-        self.browser.get(url='http://127.0.0.1:8000/')
+        self.browser.get(self.live_server_url)
 
         assert 'To-Do' in self.browser.title, "Browser title was " + self.browser.title
         self.assertIn('To-Do', self.browser.title)
@@ -61,7 +70,3 @@ class NewVisitorTest(unittest.TestCase):
         #  for her -- there is some explanatory text to that effect.
 
         # TODO: She visits that URL - her to-do list is still there.
-
-
-if __name__ == '__main__':
-    unittest.main(warnings='ignore')
