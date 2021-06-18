@@ -68,6 +68,18 @@ class NewVisitorTest(LiveServerTestCase):
         # TODO: She visits that URL - her to-do list is still there.
 
     def test_can_start_a_list_per_user(self):
+        # Edith starts a new to-do list
+        self.browser.get(self.live_server_url)
+        time.sleep(2)
+        inputbox = self.browser.find_element_by_id('id_new_item')
+        inputbox.send_keys('Buy peacock feathers')
+        inputbox.send_keys(Keys.ENTER)
+        time.sleep(1)
+
+        inputbox = self.browser.find_element_by_id('id_new_item')
+        inputbox.send_keys('Use peacock feathers to make a fly')
+        inputbox.send_keys(Keys.ENTER)
+
         # Edith has heard about a cool new online to-do app.
         # The page updates again, and now shows both items on her list
         self.check_for_row_in_list_table('2: Use peacock feathers to make a fly')
