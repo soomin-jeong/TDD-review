@@ -13,17 +13,14 @@ MAX_WAIT = 10
 
 class NewVisitorTest(StaticLiveServerTestCase):
     def setUp(self):
-        self.browser = webdriver.Firefox()
+        options = Options()
         staging_server = os.environ.get('STAGING_SERVER')
         if staging_server:
             cap = DesiredCapabilities().FIREFOX
             cap["marionette"] = False
-            binary = "/usr/bin/firefox"
-            options = Options()
             options.headless = True
-            options.binary = binary
-            self.browser = webdriver.Firefox(options=options)
             self.live_server_url = 'http://' + staging_server
+        self.browser = webdriver.Firefox(options=options)
 
     def tearDown(self):
         self.browser.quit()
