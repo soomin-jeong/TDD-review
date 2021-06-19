@@ -4,6 +4,7 @@ from selenium import webdriver
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium.common.exceptions import WebDriverException
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+from selenium.webdriver.firefox.options import Options
 
 from selenium.webdriver.common.keys import Keys
 
@@ -12,11 +13,16 @@ MAX_WAIT = 10
 
 class NewVisitorTest(StaticLiveServerTestCase):
     def setUp(self):
-        cap = DesiredCapabilities().FIREFOX
-        cap["marionette"] = False
+
         self.browser = webdriver.Firefox()
         staging_server = os.environ.get('STAGING_SERVER')
         if staging_server:
+            cap = DesiredCapabilities().FIREFOX
+            cap["marionette"] = False
+            binary = "/usr/bin/firefox"
+            options = Options()
+            options.headless = True
+            options.binary = binary
             self.live_server_url = 'http://' + staging_server
 
     def tearDown(self):
