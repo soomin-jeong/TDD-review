@@ -10,4 +10,4 @@ Reference: https://www.obeythetestinggoat.com/
 5. 17/6/21: ~7. Working incrementally
 6. 18/6/21: ~8. Prettification: Layout and Styling
 7. 19/6/21: ~11. Automating Deployment with Fabric
-8. 20/6/21: ~13. Validation of Database
+8. 20/6/21: ~14. A Simple Form
