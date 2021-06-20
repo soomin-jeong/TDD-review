@@ -1024,3 +1024,69 @@ JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: 
 
 ###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+1624177809942	geckodriver	INFO	Listening on 127.0.0.1:51103
+1624177810957	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/sx/6qfnmkp970g78qvm4l1b1m1c0000gp/T/rust_mozprofile4QBRIM"
+1624177811288	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/sx/6qfnmkp970g78qvm4l1b1m1c0000gp/T/rust_mozprofile4QBRIM/search.json.mozlz4", (void 0)))
+1624177812924	Marionette	INFO	Listening on port 51114
+1624177812938	Marionette	WARN	TLS certificate errors will be ignored for this session
+1624177812952	Marionette	INFO	Stopped listening on port 51114
+console.warn: services.settings: main/message-groups sync interrupted by shutdown
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1624177813457	geckodriver	INFO	Listening on 127.0.0.1:51155
+1624177814471	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/sx/6qfnmkp970g78qvm4l1b1m1c0000gp/T/rust_mozprofileOtFi9k"
+1624177814857	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/sx/6qfnmkp970g78qvm4l1b1m1c0000gp/T/rust_mozprofileOtFi9k/search.json.mozlz4", (void 0)))
+1624177816504	Marionette	INFO	Listening on port 51166
+1624177816542	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+1624177826849	Marionette	INFO	Stopped listening on port 51166
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1624177827642	geckodriver	INFO	Listening on 127.0.0.1:51219
+1624177828636	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/sx/6qfnmkp970g78qvm4l1b1m1c0000gp/T/rust_mozprofile3E2qcO"
+1624177829000	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/sx/6qfnmkp970g78qvm4l1b1m1c0000gp/T/rust_mozprofile3E2qcO/search.json.mozlz4", (void 0)))
+1624177830681	Marionette	INFO	Listening on port 51230
+1624177830702	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+1624177833921	Marionette	INFO	Stopped listening on port 51230
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1624177834317	geckodriver	INFO	Listening on 127.0.0.1:51270
+1624177835330	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/sx/6qfnmkp970g78qvm4l1b1m1c0000gp/T/rust_mozprofileBbbwYR"
+1624177835659	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/sx/6qfnmkp970g78qvm4l1b1m1c0000gp/T/rust_mozprofileBbbwYR/search.json.mozlz4", (void 0)))
+1624177837344	Marionette	INFO	Listening on port 51283
+1624177837415	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+1624177841129	Marionette	INFO	Stopped listening on port 51283
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1624177841515	geckodriver	INFO	Listening on 127.0.0.1:51336
+1624177842530	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/sx/6qfnmkp970g78qvm4l1b1m1c0000gp/T/rust_mozprofile9sI9jF"
+1624177842852	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/sx/6qfnmkp970g78qvm4l1b1m1c0000gp/T/rust_mozprofile9sI9jF/search.json.mozlz4", (void 0)))
+1624177844510	Marionette	INFO	Listening on port 51347
+1624177844605	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+1624177845264	Marionette	INFO	Stopped listening on port 51347
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1624177845640	geckodriver	INFO	Listening on 127.0.0.1:51389
+1624177846644	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/sx/6qfnmkp970g78qvm4l1b1m1c0000gp/T/rust_mozprofilecrgbrU"
+1624177846961	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/sx/6qfnmkp970g78qvm4l1b1m1c0000gp/T/rust_mozprofilecrgbrU/search.json.mozlz4", (void 0)))
+1624177848472	Marionette	INFO	Listening on port 51400
+1624177848510	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+1624177849198	Marionette	INFO	Stopped listening on port 51400
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
