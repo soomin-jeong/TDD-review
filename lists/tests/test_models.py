@@ -43,13 +43,13 @@ class NewListTest(TestCase):
     ITEM_TEXT = 'A new list item'
 
     def test_can_save_a_POST_request(self):
-        self.client.post('/lists/new', data={'item_text': self.ITEM_TEXT})
+        self.client.post('/lists/new', data={'text': self.ITEM_TEXT})
         self.assertEqual(Item.objects.count(), 1)
         new_item = Item.objects.first()
         self.assertEqual(new_item.text, self.ITEM_TEXT)
 
     def test_redirects_after_POST(self):
-        response = self.client.post('/lists/new', data={'item_text': self.ITEM_TEXT})
+        response = self.client.post('/lists/new', data={'text': self.ITEM_TEXT})
         new_list = List.objects.first()
         self.assertRedirects(response, f'/lists/{new_list.id}/')
 
