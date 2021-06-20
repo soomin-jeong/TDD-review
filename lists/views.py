@@ -11,6 +11,8 @@ def home_page(request):
 
 def view_list(request, list_id):
     list_ = List.objects.get(id=list_id)
+    if request.method == 'POST':
+        return add_item(request, list_id)
     return render(request, 'list.html', {'list': list_})
 
 
