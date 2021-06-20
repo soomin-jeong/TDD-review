@@ -1,10 +1,8 @@
 import time
-from selenium.common.exceptions import WebDriverException
 from selenium.webdriver.common.keys import Keys
 from selenium import webdriver
 
 from functional_tests.base import FunctionalTest
-from unittest import skip
 
 
 class NewVisitorTest(FunctionalTest):
