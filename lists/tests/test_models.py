@@ -63,6 +63,11 @@ class NewListTest(TestCase):
         list_ = List.objects.create()
         self.assertEqual(list_.get_absolute_url(), f'/lists/{list_.id}/')
 
+    def test_lists_can_have_owners(self):
+        user = User.objects.create(email='a@b.com')
+        list_ = List.objects.create(owner=user)
+        self.assertIn(list_, user.list_set.all())
+
 
 class UserModelTest(TestCase):
     def test_no_problem_with_auth_login(self):
@@ -71,6 +76,8 @@ class UserModelTest(TestCase):
         request = self.client.request().wsgi_request
         auth.login(request, user)  # should not raise
 
+    def test_list_owner_is_optional(self):
+        List.objects.create()  # should not raise
 
 
 
