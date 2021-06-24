@@ -11,3 +11,5 @@ Reference: https://www.obeythetestinggoat.com/
 6. 18/6/21: ~8. Prettification: Layout and Styling
 7. 19/6/21: ~11. Automating Deployment with Fabric
 8. 20/6/21: ~14. A Simple Form
+9. 22/6/21: ~17. Deploying New codes
+10. 23/6/21: ~19. Using mocks
