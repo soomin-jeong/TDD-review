@@ -14,4 +14,5 @@ Reference: https://www.obeythetestinggoat.com/
 9. 22/6/21: ~17. Deploying New codes
 10. 23/6/21: ~19. Using mocks
 11. 24/5/21: ~22. Outside-In TDD
+12. 29/5/21: ~ Obey the testing goat
 
