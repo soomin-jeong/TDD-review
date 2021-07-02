@@ -1,5 +1,9 @@
 m1
 m2
 m3
+<<<<<<< HEAD
 f1
 f2
+=======
+m4
+>>>>>>> testing-git
